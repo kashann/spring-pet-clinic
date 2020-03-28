@@ -1,6 +1,6 @@
 package com.kashannadeem.springframework.springpetclinic.services.map;
 
-import com.kashannadeem.springframework.springpetclinic.model.Speciality;
+import com.kashannadeem.springframework.springpetclinic.model.Specialty;
 import com.kashannadeem.springframework.springpetclinic.model.Vet;
 import com.kashannadeem.springframework.springpetclinic.services.SpecialtyService;
 import com.kashannadeem.springframework.springpetclinic.services.VetService;
@@ -35,10 +35,10 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
     @Override
     public Vet save(Vet object) {
         if(object != null) {
-            if(object.getSpecialities().size() > 0) {
-                object.getSpecialities().forEach(speciality -> {
+            if(object.getSpecialties().size() > 0) {
+                object.getSpecialties().forEach(speciality -> {
                     if(speciality.getId() == null) {
-                        Speciality savedSpecialty = specialtyService.save(speciality);
+                        Specialty savedSpecialty = specialtyService.save(speciality);
                         speciality.setId(savedSpecialty.getId());
                     }
                 });
