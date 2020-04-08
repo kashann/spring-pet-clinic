@@ -4,7 +4,7 @@ orbs:
   maven: circleci/maven@1.0.0
 
 jobs:
-  depedency-fix:
+  dependency-fix:
     executor: maven/default
     steps:
       - run: mvn install -DskipTests
