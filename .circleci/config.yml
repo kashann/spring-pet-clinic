@@ -12,4 +12,5 @@ jobs:
 workflows:
   maven_test:
     jobs:
+      - dependency-fix
       - maven/test # checkout, build, test, and upload test results
