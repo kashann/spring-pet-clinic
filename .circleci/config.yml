@@ -3,10 +3,9 @@ version: 2.1
 orbs:
   maven: circleci/maven@1.0.0
 
-jobs:
-  solve-dependency:
-    steps:
-      - run: mvn install -DskipTests
+dependencies:
+  override:
+    - mvn install -DskipTests
 
 workflows:
   maven_test:
