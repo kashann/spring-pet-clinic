@@ -6,6 +6,7 @@ orbs:
 dependencies:
   override:
     - mvn install -DskipTests
+    - mvn -fn dependency:resolve
 
 workflows:
   maven_test:
