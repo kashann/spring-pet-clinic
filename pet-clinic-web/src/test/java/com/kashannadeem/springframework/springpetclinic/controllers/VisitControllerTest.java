@@ -3,7 +3,6 @@ package com.kashannadeem.springframework.springpetclinic.controllers;
 import com.kashannadeem.springframework.springpetclinic.model.Owner;
 import com.kashannadeem.springframework.springpetclinic.model.Pet;
 import com.kashannadeem.springframework.springpetclinic.model.PetType;
-import com.kashannadeem.springframework.springpetclinic.services.OwnerService;
 import com.kashannadeem.springframework.springpetclinic.services.PetService;
 import com.kashannadeem.springframework.springpetclinic.services.VisitService;
 import org.junit.jupiter.api.BeforeEach;
@@ -30,9 +29,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @ExtendWith(MockitoExtension.class)
 class VisitControllerTest {
-
-    @Mock
-    OwnerService ownerService;
 
     @Mock
     PetService petService;
@@ -92,7 +88,7 @@ class VisitControllerTest {
 
         mockMvc.perform(post("/owners/" + ownerId + "/pets/" + petId + "/visits/new")
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-//                .param("date", "2019-11-11") //todo fix
+                .param("date", "2019-11-11")
                 .param("description", "yet another visit")
                 )
                 .andExpect(status().is3xxRedirection())
